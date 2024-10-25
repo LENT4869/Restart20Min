@@ -4,5 +4,5 @@
 pkill -f "./node-2.0.1-linux-amd64"
 
 # 重啟 ./node-2.0.1-linux-amd64
-cd ceremonyclient/node/ && ./node-2.0.1-linux-amd64 
+cd ceremonyclient/node && ./node-2.0.1-linux-amd64 
 
