@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # 設置腳本的路徑
-SCRIPT_PATH="/ceremonyclient/node/Restart.sh"
+SCRIPT_PATH="/root/ceremonyclient/node/Restart.sh"
 
 # 創建新的 cron 任務
-NEW_CRON="*/1 * * * * $SCRIPT_PATH"
+NEW_CRON="*/5 * * * * $SCRIPT_PATH"
 
 # 將當前的 crontab 輸出到變量中
 CURRENT_CRON=$(crontab -l 2>/dev/null)
