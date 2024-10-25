@@ -21,5 +21,3 @@ else
 fi
 
 echo "Crontab updated successfully."
-
-chmod +x update_crontab.sh
