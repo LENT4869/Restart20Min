@@ -5,6 +5,7 @@ SCREEN_NAME="quili"
 NODE_DIR="$HOME/ceremonyclient/node"
 NODE_EXEC="./node-2.0.2.2-linux-amd64"
 CPU_RANGE="0"  # CPU 核心范围，若为 "0"，则为空，为全部核心
+TIMEOUT_LIMIT=300  # 超时时间，单位为秒（5分钟）
 
 # 函数：关闭旧的 screen 会话
 close_old_session() {
@@ -68,8 +69,14 @@ get_frame_info() {
         error_count=$(grep -c '"level":"error"' /tmp/screen_output)
         info_count=$(grep -c '"level":"info"' /tmp/screen_output)
 
+
+        # 计算未更新时间
+        local elapsed=$((current_time - last_update_time))
+        local minutes=$((elapsed / 60))
+        local seconds=$((elapsed % 60))
+
         # 显示当前 frame_number、error 出现次数、info 出现次数和未更新时间
-        echo -ne "frame_number: $last_frame_number | increment: $last_increment | error: $error_count | info: $info_count "
+        echo -ne "frame_number: $last_frame_number | increment: $last_increment | error: $error_count | info: $info_count | 未更新时间: ${minutes}分${seconds}秒\r"
         sleep 1  # 每秒获取一次
     done
 }
