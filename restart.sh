@@ -77,7 +77,7 @@ get_frame_info() {
         local seconds=$((elapsed % 60))
 
         # 显示当前 frame_number、error 出现次数、info 出现次数和未更新时间
-        echo -ne "frame_number: $last_frame_number | increment: $last_increment | error: $error_count | info: $info_count | 未更新时间: ${minutes}分${seconds}秒\r"
+        echo -ne "frame_number: $last_frame_number | increment: $last_increment | error: $error_count | info: $info_count | 持續时间: ${minutes}分${seconds}秒\r"
         sleep 1  # 每秒获取一次
     done
 }
