@@ -71,6 +71,7 @@ get_frame_info() {
 
 
         # 计算未更新时间
+        local current_time=$(date +%s)
         local elapsed=$((current_time - last_update_time))
         local minutes=$((elapsed / 60))
         local seconds=$((elapsed % 60))
