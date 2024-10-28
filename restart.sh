@@ -49,7 +49,7 @@ get_frame_info() {
 
         # 从输出中提取最新的 frame_number
         frame_number=$(grep -oP '"frame_number":\s*\K\d+' /tmp/screen_output | tail -n 1)
-        increment=$(grep -oP '"frame_number":\s*\K\d+' /tmp/screen_output | tail -n 1)
+        increment=$(grep -oP '"increment":\s*\K\d+' /tmp/screen_output | tail -n 1)
         
 
         # 检查是否获取到 frame_number
@@ -76,7 +76,7 @@ get_frame_info() {
         local seconds=$((elapsed % 60))
 
         # 显示当前 frame_number、error 出现次数、info 出现次数和未更新时间
-        echo -ne "frame_number: $last_frame_number |echo: $increment   |    error: $error_count    |    info: $info_count    |    未更新时间: ${minutes}分${seconds}秒\r"
+        echo -ne "frame_number: $last_frame_number | echo: $increment   |    error: $error_count    |    info: $info_count    | 
         sleep 1  # 每秒获取一次
     done
 }
