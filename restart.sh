@@ -3,7 +3,7 @@
 # 定义常量
 SCREEN_NAME="quili"
 NODE_DIR="$HOME/ceremonyclient/node"
-NODE_EXEC="./node-2.0.2.2-linux-amd64"
+NODE_EXEC="./node-2.0.2.3-linux-amd64"
 CPU_RANGE="0"  # CPU 核心范围，若为 "0"，则为空，为全部核心
 TIMEOUT_LIMIT=300  # 超时时间，单位为秒（5分钟）
 
